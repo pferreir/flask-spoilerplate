@@ -16,7 +16,7 @@
     <a href="" class="brand item">{{config.SITE_TITLE}}</a>
     {% for nav_item in nav_items %}
       <a href="{{ url_for(nav_item.url) }}"
-         class="item {% if self.menu_item() == nav_item.id -%}active{%- endif -%}">
+         class="item {% if self.menu_item and self.menu_item() == nav_item.id -%}active{%- endif -%}">
         {{ nav_item.title }}
       </a>
     {% endfor %}
