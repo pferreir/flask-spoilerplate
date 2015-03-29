@@ -1,5 +1,9 @@
+env/
 __pycache__
 .webassets-cache
+
+.*.swp
+.idea/
 
 geocashing/static/lib
 app.conf
