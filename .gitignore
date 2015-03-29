@@ -1,0 +1,5 @@
+__pycache__
+.webassets-cache
+
+geocashing/static/lib
+app.conf

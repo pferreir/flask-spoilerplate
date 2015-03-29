@@ -1,0 +1,11 @@
+# Sample config file
+
+SQLALCHEMY_DATABASE_URI = 'postgres:///geocashing'
+
+DEBUG = True
+ASSETS_DEBUG = DEBUG
+
+SECRET_KEY = '<set this to a long random string>'
+
+SITE_TITLE = "Geocashing"
+SITE_SUBTITLE = "A boilerplate geocache management site"

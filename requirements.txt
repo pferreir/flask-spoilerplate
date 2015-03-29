@@ -1,0 +1,8 @@
+cssmin
+flask
+flask-assets
+flask-script
+flask-sqlalchemy
+flask-wtf
+pyyaml
+rjsmin

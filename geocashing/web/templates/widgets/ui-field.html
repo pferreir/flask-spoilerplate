@@ -1,0 +1,16 @@
+<div class="field">
+  <label>{{ field.label }}</label>
+  {% if field.errors %}
+    <div class="ui error message">
+      {% for error in field.errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
+  {% endif %}
+  {{ input(field, **kwargs) }}
+  {% if field.description %}
+    <div class="ui pointing up label">
+      {{ field.description | safe }}
+    </div>
+  {% endif %}
+</div>

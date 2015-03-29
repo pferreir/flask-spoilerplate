@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block menu_item %}create{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="center aligned starter column">
+      <h1 class="ui header">Create a new Geocache</h1>
+
+      <form method="POST" action="">
+        <div class="ui form {% if form.errors -%}error{%- endif -%}">
+          <h4 class="ui dividing header">Basic Information</h4>
+          {{ form.code(size=9, placeholder="GC1234567") }}
+          {{ form.title(placeholder="The title of the Geocache") }}
+          {{ form.text(placeholder="A description of the cache") }}
+          {{ form.csrf_token }}
+          <input class="ui submit button" type="submit" value="Create">
+        </div>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

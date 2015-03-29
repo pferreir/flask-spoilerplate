@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <div class="row">
+    <div class="center aligned starter column">
+      <div class="ui segment">
+        <h1 class="ui header">{{ cache.code }}
+          <div class="sub header">{{ cache.title }}</div>
+        </h1>
+        <h4 class="ui horizontal header divider">
+          Information
+        </h4>
+        <p>
+          {{cache.text}}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

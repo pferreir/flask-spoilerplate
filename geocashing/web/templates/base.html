@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>{{config.SITE_TITLE}} : {% block subtitle %}{{config.SITE_SUBTITLE}}{% endblock %}</title>
+
+  {% assets "base-css" %}
+    <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+  {% endassets %}
+</head>
+
+<body>
+  <nav class="ui fixed menu inverted navbar">
+    <a href="" class="brand item">{{config.SITE_TITLE}}</a>
+    {% for nav_item in nav_items %}
+      <a href="{{ url_for(nav_item.url) }}"
+         class="item {% if self.menu_item() == nav_item.id -%}active{%- endif -%}">
+        {{ nav_item.title }}
+      </a>
+    {% endfor %}
+  </nav>
+
+  <main class="ui page grid">
+    {% block body %}
+    {% endblock %}
+  </main>
+
+  {% assets "base-js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+</body>
+</html>

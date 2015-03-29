@@ -1,0 +1,11 @@
+base-js:
+    contents:
+        - lib/jquery/dist/jquery.js
+        - lib/semantic-ui/dist/semantic.js
+    output: lib/min/base.js
+    filters: rjsmin
+base-css:
+    contents:
+        - lib/semantic-ui/dist/semantic.css
+    output: lib/min/base.css
+    filters: cssmin
