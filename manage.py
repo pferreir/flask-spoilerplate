@@ -1,20 +1,19 @@
 import os
+from contextlib import contextmanager
 
 from flask_script import Manager
 from geocashing.app import app
 
 
-class cd:
+@contextmanager
+def cd(path):
     """Context manager that changes CWD"""
-    def __init__(self, new_path):
-        self.new_path = os.path.expanduser(new_path)
+    path = os.path.expanduser(path)
+    old_path = os.getcwd()
+    os.chdir(path)
+    yield
+    os.chdir(old_path)
 
-    def __enter__(self):
-        self.saved_path = os.getcwd()
-        os.chdir(self.new_path)
-
-    def __exit__(self, etype, value, traceback):
-        os.chdir(self.saved_path)
 
 manager = Manager(app)
 
@@ -35,6 +34,7 @@ def createdb():
 
     db.create_all()
     db.session.commit()
+
 
 if __name__ == "__main__":
     manager.run()
