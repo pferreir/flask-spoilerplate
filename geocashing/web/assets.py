@@ -1,6 +1,6 @@
 import os
 from webassets.loaders import YAMLLoader
-from flask.ext.assets import Environment
+from flask_assets import Environment
 
 
 def init_assets(app):
